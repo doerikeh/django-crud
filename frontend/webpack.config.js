@@ -22,7 +22,7 @@ module.exports = {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: "./src/css/tailwind.css",
+        filename: "tailwind.css",
         chunkFilename: "tailwind.css"
       }),
       new HtmlwebPackPlugin({

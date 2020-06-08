@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import Header from "./header/Header";
-
+import '../../static/frontend/tailwind.css';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +36,8 @@ class App extends Component {
     return (
       <div>
         <Header/>
-        <ul>
+        <div>
+        <ul className="mt-12">
           {this.state.data.map(crud => {
             return (
               <li key={crud.id}>
@@ -45,6 +46,7 @@ class App extends Component {
             );
           })}
         </ul>
+        </div>
       </div>
     );
   }
