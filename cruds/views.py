@@ -4,4 +4,4 @@ from rest_framework import generics
 
 class CrudListCreate(generics.ListCreateAPIView):
     queryset = Crud.objects.all()
-    serializer_class = CrudSerializer
+    serializer_class = CrudSerializer   
