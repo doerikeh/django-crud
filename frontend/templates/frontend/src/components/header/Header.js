@@ -37,7 +37,7 @@ const Header = () => {
                                         </path>
                                     </svg>
                                 </button>
-                                <button type="button" id="" class="hidden flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700">
+                                <button type="button" id="" className="hidden flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className="fill-current w-4 h-4">
                                         <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z">
                                         </path>
@@ -45,8 +45,12 @@ const Header = () => {
                                 </button>
                                 <div className="hidden lg:flex lg:items-center lg:justify-between xl:w-1/4 px-6">
                                     <div>
-                                        <a>
-                                        <svg className="fill-current pointer-events-none text-gray-600 w-4 h-4" id="Capa_1" height="512" viewBox="0 0 515.558 515.558" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333 0-115.484-93.961-209.445-209.445-209.445s-209.444 93.961-209.444 209.445 93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564c0-.001-137.214-137.213-137.214-137.213zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z"/></svg>
+                                        <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" xml="preserve" width="512px" height="512px" className="h-10 w-10"><g><g>
+                                                <g>
+                                                    <path d="M256,0C114.844,0,0,114.844,0,256s114.844,256,256,256s256-114.844,256-256S397.156,0,256,0z M256,74.667    c67.635,0,122.667,55.031,122.667,122.667S323.635,320,256,320s-122.667-55.031-122.667-122.667S188.365,74.667,256,74.667z     M256,469.333c-69.707,0-131.52-33.755-170.473-85.615c42.676-20.534,103.621-42.385,170.473-42.385    c66.857,0,127.807,21.854,170.474,42.383C387.521,435.577,325.708,469.333,256,469.333z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#3D5174"/>
+                                                </g>
+                                            </g></g> </svg>
 
                                         </a>
                                     </div>
