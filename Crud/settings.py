@@ -58,6 +58,8 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODEL = "cruds.User"
+
 ROOT_URLCONF = 'Crud.urls'
 
 TEMPLATES = [
