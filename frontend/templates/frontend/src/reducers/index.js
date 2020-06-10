@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import cruds from './todos';
+import cruds from './cruds';
 import auth from './auth';
 import { LOGOUT_SUCCESS } from '../actions/types';
 

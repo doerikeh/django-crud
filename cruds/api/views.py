@@ -1,8 +1,7 @@
 
 from ..models import Crud
 from .serializers import CrudSerializer
-from rest_framework import generics
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, viewsets
 from rest_framework.response import Response
 
 from knox.models import AuthToken
@@ -46,6 +45,12 @@ class LoginAPIView(generics.GenericAPIView):
         })
 
 
-class CrudListCreate(generics.ListCreateAPIView):
-    queryset = Crud.objects.all()
-    serializer_class = CrudSerializer   
+class CrudListCreate(viewsets.ModelViewSet):
+    serializer_class = CrudSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return self.request.user.cruds.all()
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)

@@ -1,20 +1,67 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../../../actions/auth';
+export class Header extends Component {
+    render() {
+        const { user, isAuthenticated } = this.props.auth;
 
-
-
-
-const Header = () => {
-    return (
+        const userLinks = (
         <div>
-            <header id="header">
+            <div >
+            {user ? user.email : ''}
+            <div className="hidden lg:flex lg:items-center lg:justify-between xl:w-1/4 px-6">
+                <div>
+                    <Link to="/">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" xml="preserve" width="512px" height="512px" className="h-10 w-10"><g><g>
+                            <g>
+                                <path d="M256,0C114.844,0,0,114.844,0,256s114.844,256,256,256s256-114.844,256-256S397.156,0,256,0z M256,74.667    c67.635,0,122.667,55.031,122.667,122.667S323.635,320,256,320s-122.667-55.031-122.667-122.667S188.365,74.667,256,74.667z     M256,469.333c-69.707,0-131.52-33.755-170.473-85.615c42.676-20.534,103.621-42.385,170.473-42.385    c66.857,0,127.807,21.854,170.474,42.383C387.521,435.577,325.708,469.333,256,469.333z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#3D5174"/>
+                            </g>
+                        </g></g> </svg>
+
+                    </Link>
+                </div>
+            </div>
+            <div className='menu'>
+                <a onClick={this.props.logout} className='item'>
+                Logout
+                </a>
+            </div>
+            </div>
+        </div>
+        );
+
+        const guestLinks = (
+            <div className="flex">
+                <div className="mr-20">
+                    <Link to="/register">
+                        <h2 className="text-white font-semibold font-sans">
+                            Sing up
+                        </h2>
+                    </Link>
+                </div>
+                <div className="">
+                    <Link to="/login">
+                        <h2 className="text-white font-semibold">
+                            Login
+                        </h2>
+                    </Link>
+                </div>
+            </div>
+          );
+      
+
+        return (
+            <div>
+                 <header id="header">
                 <div className="flex bg-white border-b border-gray-200 fixed top-0 inset-x-0 z-100 h-16 items-center">
                     <div className="w-full max-w-screen-xl relative mx-auto px-6">
                         <div className="flex items-center -mx-6">
                             <div className="lg:w-1/4 xl:w-1/5 pl-6 pr-6 lg:pr-8">
                                 <div className="flex items-center">
-                                    <a className="block lg:mr-4">
+                                    <Link to="/" className="block lg:mr-4">
                                         <svg className="h-10 w-auto hidden md:block" height="72" viewBox="0 0 128 128" width="72" xmlns="http://www.w3.org/2000/svg"><g><g><path d="m64 78.38v28.75l-24.896 14.37-24.897-14.37v-28.75l24.897-14.38z" fill="#fd637b"/><path d="m39.1 92.75v28.75l-24.89-14.37v-28.75z" fill="#62e0da"/><path d="m64 78.38v28.75l-24.9 14.37v-28.75z" fill="#fdd82e"/></g><g><path d="m64 20.88v28.75l-24.896 14.37-24.897-14.37v-28.75l24.897-14.38z" fill="#62e0da"/><path d="m39.1 35.25v28.75l-24.89-14.37v-28.75z" fill="#fdd82e"/><path d="m64 20.88v28.75l-24.9 14.37v-28.75z" fill="#fd637b"/></g><g><path d="m113.793 49.63v28.75l-24.897 14.37-24.896-14.37v-28.75l24.896-14.38z" fill="#fdd82e"/><path d="m113.79 49.63v28.75l-24.89 14.37v-28.75z" fill="#fd637b"/><path d="m88.9 64v28.75l-24.9-14.37v-28.75z" fill="#62e0da"/></g></g></svg>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="flex flex-grow lg:w-3/4 xl:w-4/5">
@@ -43,25 +90,24 @@ const Header = () => {
                                         </path>
                                     </svg>
                                 </button>
-                                <div className="hidden lg:flex lg:items-center lg:justify-between xl:w-1/4 px-6">
-                                    <div>
-                                        <a href="">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" xml="preserve" width="512px" height="512px" className="h-10 w-10"><g><g>
-                                                <g>
-                                                    <path d="M256,0C114.844,0,0,114.844,0,256s114.844,256,256,256s256-114.844,256-256S397.156,0,256,0z M256,74.667    c67.635,0,122.667,55.031,122.667,122.667S323.635,320,256,320s-122.667-55.031-122.667-122.667S188.365,74.667,256,74.667z     M256,469.333c-69.707,0-131.52-33.755-170.473-85.615c42.676-20.534,103.621-42.385,170.473-42.385    c66.857,0,127.807,21.854,170.474,42.383C387.521,435.577,325.708,469.333,256,469.333z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#3D5174"/>
-                                                </g>
-                                            </g></g> </svg>
-
-                                        </a>
-                                    </div>
-                                </div>
+                                {isAuthenticated ? userLinks : guestLinks}
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
-export default Header;
+const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { logout }
+  )(Header);
+  

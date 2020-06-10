@@ -28,8 +28,8 @@ class App extends Component {
           <Header />
           <Switch>
             <PrivateRoute exact path='/' component={Body} />
-            <Route exact path='/delete/:id' component={TodoDelete} />
-            <Route exact path='/edit/:id' component={TodoEdit} />
+            <Route exact path='/delete/:id' component={CrudDelete} />
+            <Route exact path='/edit/:id' component={CrudEdit} />
             <Route exact path='/register' component={RegisterForm} />
             <Route exact path='/login' component={LoginForm} />
           </Switch>

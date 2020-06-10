@@ -25,4 +25,4 @@ class Users(AdminUser):
 
 @admin.register(Crud)
 class CrudsAdmin(admin.ModelAdmin):
-    list_display = ("title",)
+    list_display = ("user","title", "date_created", "date_updated")
