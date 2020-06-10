@@ -63,7 +63,13 @@ export class Body extends Component {
                                       <div className="border my-3 p-6 rounded-lg mx-10">
                                         <div className="flex justify-between items-center">
                                             <li key={crud.id}>
+                                                <div>
+                                                <span className="text-sm font-normal">{crud.email}</span>
+                                                </div>
                                                 {crud.title}
+                                                <div>
+                                                  <p className="text-sm font-semibold">{crud.date_created}</p>
+                                                </div>
                                             </li>
                                               <div className="flex">
                                                 <div className="mr-10">
