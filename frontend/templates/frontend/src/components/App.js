@@ -5,9 +5,8 @@ import Body from './body/Body';
 import { Router, Route, Switch } from 'react-router-dom';
 
 import history from '../history';
-import Dashboard from './todos/Dashboard';
-import TodoDelete from './todos/TodoDelete';
-import TodoEdit from './todos/TodoEdit';
+import CrudDelete from './body/CrudDelete';
+import CrudEdit from './body/CrudEdit';
 
 import RegisterForm from './auth/RegisterForm';
 import LoginForm from './auth/LoginForm';
@@ -28,13 +27,12 @@ class App extends Component {
         <Router history={history}>
           <Header />
           <Switch>
-            <PrivateRoute exact path='/' component={Dashboard} />
+            <PrivateRoute exact path='/' component={Body} />
             <Route exact path='/delete/:id' component={TodoDelete} />
             <Route exact path='/edit/:id' component={TodoEdit} />
             <Route exact path='/register' component={RegisterForm} />
             <Route exact path='/login' component={LoginForm} />
           </Switch>
-          <Body/>
         </Router>
       </Provider>
       </div>
